@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method = "POST">
+        <label for="selection">Pick an object</label>
+        <select name="selection" id="selection">
+            <option value="0">Hulk (large,2 legs, green)</option>
+            <option value="1">Fox (small, 4 legs, grey)</option>
+            <option value="2">Elephant (large, 4 legs, brown)</option>
+            <option value="3">Ekans (small, 0 legs, purple)</option>
+            <option value="4">Totoro (large, 2 legs, grey)</option>
+        </select>
+        <input type="submit" value="Pick" />
+    </form>
+
+    {% for image in images %}
+        <p>{{ image }}</p>
+    {% endfor %}
+</body>
+</html>
