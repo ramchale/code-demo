@@ -10,8 +10,7 @@ properties = {
     '4': {'large': True, 'legs': 2, 'color': 'grey'} # Totoro
 }
 
-# TODO - Get some images and replace these and the tag in the HTML with actual images
-images = ['Hulk', 'Fox', 'Elephant', 'Ekans', 'Totoro']
+images = ['hulk.jpg', 'fox.jpg', 'elephant.jpg', 'ekans.gif', 'totoro.jpg']
 
 
 def pick_images(large, legs, color):
@@ -32,7 +31,9 @@ def default():
 @app.route('/pick-a-thing/', methods=['GET', 'POST','DELETE', 'PATCH'])
 def pick_a_thing():
     if request.method == 'GET':
-        return render_template('pick-a-thing.j2.html', images=images)
+        selected_images=[]
+        # selected_images=images # Uncomment to display all
+        return render_template('pick-a-thing.j2.html', images=selected_images)
 
     if request.method == 'POST':
         selected_item = request.form.get('selection')
