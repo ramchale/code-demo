@@ -5,13 +5,19 @@ app = Flask(__name__)
 
 properties = {
     '0': {'large': True, 'legs': 2, 'color': 'green'},  # Hulk
-    '1': {'large': False, 'legs': 4, 'color': 'grey'},  # Fox
-    '2': {'large': True, 'legs': 4, 'color': 'brown'},  # Elephant
+    '1': {'large': False, 'legs': 4, 'color': 'orange'},  # Fox
+    '2': {'large': True, 'legs': 4, 'color': 'grey'},  # Elephant
     '3': {'large': False, 'legs': 0, 'color': 'purple'},  # Ekans
     '4': {'large': True, 'legs': 2, 'color': 'grey'}  # Totoro
 }
 
-images = ['hulk.jpg', 'fox.jpg', 'elephant.jpg', 'ekans.gif', 'totoro.jpg']
+images = {
+    'hulk': 'hulk.jpg',
+    'fox': 'fox.jpg',
+    'elephant': 'elephant.jpg',
+    'ekans': 'ekans.gif',
+    'totoro': 'totoro.jpg'
+}
 
 
 def pick_images(large, legs, color):
@@ -19,7 +25,7 @@ def pick_images(large, legs, color):
 
     # TODO - Add more logic here to select the right image based on the three properties
     if large:
-        selected_images = [images[0]]
+        selected_images = [images['hulk']]
 
     return selected_images
 
